@@ -1,0 +1,1 @@
+[](https://dev.to/megaconfidence/beginner-guide-to-memory-management-in-rust-ownership-380p)
