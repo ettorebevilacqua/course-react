@@ -13,6 +13,7 @@
     "db:seed": "pnpm -F db db:seed",
     "db:push": "pnpm -F db db:push",
     "db:studio": "pnpm -F db:studio",
+    "doc": "turbo run dev --filter=@acme/doc",
     "dev": "turbo dev --parallel",
     "start": "turbo start --parallel",
     "format": "turbo format --continue -- --cache --cache-location='node_modules/.cache/.prettiercache'",

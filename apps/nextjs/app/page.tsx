@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { CreatePost } from "@/app/_components/create-post";
+import { CreatePost } from "@/components/create-post";
 import { api } from "@/trpc/server";
 import { Button } from "@mantine/core";
 
 import { auth, signOut } from "@acme/auth";
 import { MyButton } from "@acme/ui";
+import "./layout.css"
 
 export default async function Home() {
   const hello = await api.hello.query({ text: "from tRPC" });

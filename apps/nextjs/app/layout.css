@@ -1,0 +1,31 @@
+
+/* Resets */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.layHead { grid-area: header; }
+.layMenu { grid-area: menu; background-color: rgba(255, 255, 255, 0.8); text-align: center;}
+.layMain { grid-area: main;  background-color: #fff;}
+.layRight { grid-area: right; }
+.layFooter { grid-area: footer; }
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+      'menu main';
+    gap: 10px;
+    grid-template-rows: auto;
+    background-color: #2196F3;
+    padding: 10px;
+    grid-template-columns: 14% 85%;
+    height: 100%;
+  }
+
+  .grid-container > div {
+    padding: 20px 0;
+  }
