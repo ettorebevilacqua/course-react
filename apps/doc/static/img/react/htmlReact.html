@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Basic Example with JSX</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+
+    <div id="container"></div>
+    <script type="text/babel">
+      const ExampleApplication = ()=>{
+          const message = 'React has been successfully running'
+          return <p>{message}</p>;
+        }
+        const rootNode = document.getElementById('container')
+        ReactDOM.render( <ExampleApplication />, rootNode );
+
+    </script>
+  </body>
+</html>
