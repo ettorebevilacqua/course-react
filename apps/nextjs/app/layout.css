@@ -9,7 +9,7 @@
 }
 
 .layHead { grid-area: header; }
-.layMenu { grid-area: menu; background-color: rgba(255, 255, 255, 0.8); text-align: center;}
+.layMenu { grid-area: menu; color:black; background-color: rgba(255, 255, 255, 0.8); text-align: center;}
 .layMain { grid-area: main;  background-color: #fff;}
 .layRight { grid-area: right; }
 .layFooter { grid-area: footer; }
@@ -29,3 +29,5 @@
   .grid-container > div {
     padding: 20px 0;
   }
+
+  a {color:black}

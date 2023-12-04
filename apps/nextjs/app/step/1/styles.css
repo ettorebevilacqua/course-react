@@ -1,0 +1,115 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.firsBg {
+  background-color: blue;
+  color: white;
+}
+
+.secondBg {
+  background-color: yellow;
+  color: black;
+}
+
+.bgExample {
+  background-color: #cccccc;
+  color: black;
+}
+.bgExample2 {
+  background-color: #eeeeee;
+  color: black;
+}
+
+.basePadding {
+  padding: 4px;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.colorAlert {
+  color: red;
+}
+
+.borderAlert {
+  border: red 2px solid;
+  display: grid;
+}
+.marginTop12 {
+  margin-top: 12px;
+}
+.boxTop {
+  margin-top: 8px;
+  padding: 6px;
+}
+.box {
+  float: left;
+  text-align: left;
+  margin-top: 6px;
+  padding: 6px;
+}
+.grid {
+  display: grid;
+}
+
+.right {
+  float: right;
+  text-align: right;
+}
+
+.left {
+  float: right;
+  text-align: left;
+}
+
+.inLine {
+  display: inline;
+}
+
+.s100 {
+  width: 100%;
+}
+
+.s70 {
+  width: 69%;
+}
+.s66 {
+  width: 65%;
+}
+
+.s50 {
+  width: 45%;
+}
+
+.s30 {
+  width: 29%;
+}
+
+.s20 {
+  width: 19%;
+}
+
+.textWhite {
+  color: white;
+}
+
+.button2 {
+  font: bold 0.9rem Arial;
+  text-decoration: none;
+  background-color: #eeeeee;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #cccccc;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #cccccc;
+}
+
+.button {
+  font: bold 0.9rem Arial;
+  text-decoration: none;
+  padding: 2px 6px 2px 6px;
+}

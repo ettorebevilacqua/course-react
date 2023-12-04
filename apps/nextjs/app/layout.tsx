@@ -6,6 +6,8 @@ import { theme } from "@/config/theme";
 import { TRPCReactProvider } from "@/trpc/react";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import './layout.css'
+import Link from "next/link";
+import { Dynamic2 } from "./dinamic";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -38,11 +40,17 @@ export default function RootLayout({
             <body className={`font-sans ${inter.variable}`}>
                 <TRPCReactProvider headers={headers()}>
                     <MantineProvider theme={theme}>
-                    <div className="grid-container">
-                        <div className="layMenu">Menu</div>
-                        <div className="layMain">
-                            {children}
-                        </div>
+                        <div className="grid-container">
+                            <div className="layMenu">
+                                {[...Array(12).keys()].map(num =>
+                                    <div key={num}><Link href={`/step/${num}`}>
+                                        {`step/${num}`}
+                                    </Link></div>
+                                )}
+                            </div>
+                            <div className="layMain">
+                            <Dynamic2>{children}</Dynamic2>
+                            </div>
                         </div>
                     </MantineProvider>
                 </TRPCReactProvider>
