@@ -362,5 +362,64 @@ fuori fal nostro file, ognuno di essi definito in un file a parte.
 
 ### La cartella component
 
-Creiamo una cartella component dove mettere i nostri files
+Creiamo una cartella component dove mettere i nostri componenti, il nome del file è il nome del componente e spostiamo da page nel file la definizione del componente.
+Il risultato finale Page.js è il seguente :
 
+```js
+import { useState } from "react";
+import Header from "./component/Header";
+import NavBar from "./component/NavBar";
+import SideBar from "./component/SideBar";
+import Content from "./component/Content";
+import Footer from "./component/Footer";
+
+import "./styles.css";
+
+const navBarDir = [
+    { flex: "row", label: ">>>>" },
+    { flex: "row-reverse", label: "<<<<" },
+];
+
+const getNavState = (pos)=> navBarDir[pos];
+
+export default function Page() {
+    const [posNav, setPosNav] = useState(0);
+    const handleBarMove = () => setPosNav(!posNav);
+
+    return (
+        <div className="App">
+            <Header title="Motor" Menu={NavBar} />
+            <div
+                key="MAIN-CONTENT"
+                style={{ flexDirection: getNavState(posNav).flex }}
+                className="content-main"
+            >
+                <SideBar
+                    onBarMove={handleBarMove}
+                    label={getNavState(posNav).label}
+                />
+                <Content />
+            </div>
+            <Footer />
+        </div>
+    );
+}
+```
+
+il file si è svuotato molto, importo i componenti divisi ora in files dentro la cartella components.
+
+La logica è chiara grazie a NavBarDir, ho aggiunto la funzione getNavState che nasconde l' accesso diretto a `NavBarDir`, se cambio la logica di accesso il codice sotto che si ripete non camnbia.
+
+ `const handleBarMove = () => setPosNav(!posNav)`
+
+ Anche qui, non faccio usare al jsx setPosNav, ora cè solo  setPosNav, e se dobbiamo aggiungere altro ? dovrei se usato setPosNav modificae in firo il jsx dove lo usa, mentre cosi succesivamente non ne risente.
+
+### Unica fonte di verità
+
+Con questo esempio finale, di `getBarDir`, o costanti che prendono i valori stringa e il codice sotto accede con le constanti e non la stringa, se la stringa cambia non devo aggiornare in giro chi utilizza quella stringa.
+
+Agli array oggetti ecc, cerchiamo di accedere con un funzione per nascondere o dettagli dietro. che possono cambiare.
+
+### PARTIAMO CON IL PIEDE GIUSTO
+
+Se seguite questi approcci avete poi molte meno difficoltà, vi abiatuate subito con un codice più attento. I problemi di React come nella programmazione in generale sono fortemente legati al codice non bene organizzato, impare tutto quello che cè da usare con React non basta, poi bisogna gestire bene il codice, qui facendo notare cosa comporta, la speranza è che poi continuiate avendo ben presente quello che qui abbiamo esposto.

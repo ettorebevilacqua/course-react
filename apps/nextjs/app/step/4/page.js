@@ -1,17 +1,3 @@
-/*
-Il codice html diviso dentro a funzioni in modo che nel return vedo solo
-
-      <div className="App">
-            {renderHead()}
-            {renderMenuLeft()}
-            {renderContent()}
-            {renderFooter()}
-        </div>
-
-In questo modo rendiamo chiaro quale sia il layout della pagina.
-Rispetto alla versione precedente il risultato è identico
-ma abbiamo aumentato molto la leggibilità e manuntezione del codice.
-*/
 "use client";
 
 import "./styles.css";

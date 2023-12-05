@@ -18,7 +18,7 @@ const getNavState = (pos)=> navBarDir[pos];
 
 export default function Page() {
     const [posNav, setPosNav] = useState(0);
-    const handleBarMove = () => setPosNav(Number(!posNav));
+    const handleBarMove = () => setPosNav(!posNav);
 
     return (
         <div className="App">
