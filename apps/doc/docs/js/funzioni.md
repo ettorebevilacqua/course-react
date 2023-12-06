@@ -181,7 +181,6 @@ console.log(squareOfAddVal)
 
 const addAndSquare = (x, y) => square(add(x, y))
 console.log(addAndSquare(3, 2))
-
 ```
 
 addAndSquare chiama square con una funzione da eeguire, il suo risultato viene poi passato come parametro di addAndSquare, evitando variaibli intermendie.

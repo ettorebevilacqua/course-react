@@ -14,6 +14,7 @@
     "db:push": "pnpm -F db db:push",
     "db:studio": "pnpm -F db:studio",
     "doc": "turbo run dev --filter=@acme/doc",
+    "next": "pnpm dev --filter=@acme/nextjs",
     "dev": "turbo dev --parallel",
     "start": "turbo start --parallel",
     "format": "turbo format --continue -- --cache --cache-location='node_modules/.cache/.prettiercache'",
@@ -22,7 +23,8 @@
     "lint:fix": "turbo lint --continue -- --fix --cache --cache-location 'node_modules/.cache/.eslintcache' && manypkg fix",
     "typecheck": "turbo typecheck",
     "zen:generate": "turbo zen:generate",
-    "zen:up": "pnpm zen:generate && pnpm db:push"
+    "zen:up": "pnpm zen:generate && pnpm db:push",
+    "kill-port" : "npx kill-port 3000"
   },
   "dependencies": {
     "@acme/prettier-config": "0.1.0",
