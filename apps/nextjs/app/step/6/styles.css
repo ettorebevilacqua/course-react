@@ -43,7 +43,8 @@ button {
 
 .sideBar {
     height: 98%;
-    width: 19%;
+    width: 140px;
+    background-color: blue;
 }
 
 .header{
@@ -56,19 +57,18 @@ button {
 .menuFlex {
     display: flex;
     flex-wrap: nowrap;
-    background-color: DodgerBlue;
     align-items: center;
     margin: 6px;
 }
 
-.menuFlex > a {
+.menuFlex > button {
     color: darkred;
     background-color: #f1f1f1;
     width: 100px;
     margin: 4px;
     text-align: center;
     line-height: 22px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 

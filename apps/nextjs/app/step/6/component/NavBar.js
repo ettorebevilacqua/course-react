@@ -3,22 +3,21 @@ import Home from "../pages/Home";
 import Prodotti from "../pages/Prodotti";
 
 const NavBar = ({ onChangePage, col }) => {
-    const handleChangePage =  (page) => (e) =>{
-        e.preventDefault();
+    const handleChangePage =  (page) => () =>{
         onChangePage?.(page);
     }
 
     return (
         <div className={`menuFlex ${col ? "flex-col" : "flex-row"}`}>
-            <a href="#" onClick={handleChangePage(Home)}>
+            <button href="#" onClick={handleChangePage(Home)}>
                 Home
-            </a>
-            <a href="#" onClick={handleChangePage(Prodotti)}>
+            </button>
+            <button href="#" onClick={handleChangePage(Prodotti)}>
                 Prodotti
-            </a>
-            <a href="#" onClick={handleChangePage(Contatti)}>
+            </button>
+            <button href="#" onClick={handleChangePage(Contatti)}>
                 Contatti
-            </a>
+            </button>
         </div>
     );
 };

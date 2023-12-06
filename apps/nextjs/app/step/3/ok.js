@@ -47,7 +47,7 @@ const SideBar = ({ onClickBarMove }) => (
             onClick={() => {
                 onClickBarMove("row-reverse");
             }}
-            className="btNavBarPos secondBg"
+            className="btNavBarPos"
         >
             {">>>"}
         </button>

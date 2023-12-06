@@ -266,7 +266,7 @@ export default function Page() {
     />
 ```
 
- console.log(event.target), visualizza : `<button class="btNavBarPos secondBg">` che è dove è stato fatto il click che si trova dentro a SideBar, ma noi non usiamo event, e quindi lo possiamo omettere tra i parametri passati   :  `onClickBarMove={() => {`
+ console.log(event.target), visualizza : `<button class="btNavBarPos">` che è dove è stato fatto il click che si trova dentro a SideBar, ma noi non usiamo event, e quindi lo possiamo omettere tra i parametri passati   :  `onClickBarMove={() => {`
 
 ### Ordine al codice e attenzione alla nomenclatura
 
@@ -310,7 +310,7 @@ const SideBar = ({ onBarMove }) => {
     return <div key="MENULEFT" className="sideBar">
         <button
             onClick={handleBarMove}
-            className="btNavBarPos secondBg"
+            className="btNavBarPos"
         >
             {">>>"}
         </button>
@@ -339,7 +339,7 @@ const SideBar = ({ onBarMove, label }) => {
 
     return (
         <div key="MENULEFT" className="sideBar">
-            <button onClick={handleBarMove} className="btNavBarPos secondBg">
+            <button onClick={handleBarMove} className="btNavBarPos">
                 {label}
             </button>
             <NavBar col />

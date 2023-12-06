@@ -180,7 +180,7 @@ possiamo metterlo in testa alla SideBar
 ```js
 const SideBar = () => (
   <div key="MENULEFT" className="sideBar">
-    <button className="btNavBarPos secondBg">{">>>"}</button>
+    <button className="btNavBarPos">{">>>"}</button>
     <NavBar col />
   </div>
 );
@@ -188,7 +188,7 @@ const SideBar = () => (
 
 Inserito il pulsanto al suo click non fa nulla, per fargli fare delle azioni ho bisogno di impostare la proprietà `onClick` in questo modo :
 
-`<button onClick={()=>alert('click')} className="btNavBarPos secondBg" >`
+`<button onClick={()=>alert('click')} className="btNavBarPos" >`
 
 questo visualizza un alert per provare se funziona il nostro click
 Quello che mi interessa però è al click cambiare il valore dentro a funciont page
@@ -213,7 +213,7 @@ const SideBar = ({ onClickBarMove }) => (
       onClick={() => {
         onClickBarMove("row-reverse");
       }}
-      className="btNavBarPos secondBg"
+      className="btNavBarPos"
     >
       {">>>"}
     </button>
@@ -272,7 +272,7 @@ const SideBar = ({ onClickBarMove }) => (
     // se onClickBarMove non è definita genera errore
         onClickBarMove("row-reverse");
       }}
-      className="btNavBarPos secondBg"
+      className="btNavBarPos"
     >
 ```
 
@@ -294,7 +294,7 @@ const SideBar = ({ onClickBarMove }) => (
     // chiama onClickBarMove solo se esiste
        onClickBarMove && onClickBarMove("row-reverse");
       }}
-      className="btNavBarPos secondBg"
+      className="btNavBarPos"
     >
 ```
 Se ancora non è chiaro proviamo a mettere il bottone direttamente dentro a page : 
@@ -386,7 +386,7 @@ const SideBar = ({ onClickBarMove }) => (
         onClick={() => {
           onClickBarMove("row-reverse");
         }}
-        className="btNavBarPos secondBg"
+        className="btNavBarPos"
       >
         {">>>"}
       </button>

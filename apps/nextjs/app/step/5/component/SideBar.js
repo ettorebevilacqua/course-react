@@ -5,7 +5,7 @@ const SideBar = ({ onBarMove, label }) => {
 
     return (
         <div key="MENULEFT" className="sideBar">
-            <button onClick={handleBarMove} className="btNavBarPos secondBg">
+            <button onClick={handleBarMove} className="btNavBarPos">
                 {label}
             </button>
             <NavBar col />
