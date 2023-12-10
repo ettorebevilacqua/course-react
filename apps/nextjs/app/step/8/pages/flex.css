@@ -1,0 +1,35 @@
+.box {
+    background-color: #aa99cc;
+    display: flex;
+    margin: 8px;
+}
+.ul {
+    background-color: #aa99cc;
+    margin: 8px;
+}
+.selects {
+    display:"flex";
+}
+
+.box > div {
+    background-color: #aa1111;
+    margin:6px;
+    text-align : center;
+    padding : 3px;
+    color:white;
+    font-weight: 600;
+}
+
+.ul > li {
+    background-color: #aa1111;
+    margin:6px;
+    text-align : center;
+    padding : 3px;
+    color:white;
+    font-weight: 600;
+}
+
+.boxSize {
+    height:400px;
+    width: 600px;
+}

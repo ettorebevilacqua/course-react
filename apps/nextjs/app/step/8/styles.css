@@ -1,0 +1,98 @@
+.App {
+    font-family: sans-serif;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+}
+
+.firsBg {
+    background-color: blue;
+    color: white;
+}
+
+.secondBg {
+    background-color: cornflowerblue;
+    color: black;
+}
+
+button {
+    font: bold 0.9rem Arial;
+    text-decoration: none;
+    padding: 2px 6px 2px 6px;
+}
+
+.btNavBarPos {
+    width: 90%
+}
+
+.title {
+    margin-left:14px
+}
+
+.content-main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.content-main > div {
+    margin: 4px;
+}
+
+.sideBar {
+    height: 98%;
+    width: 140px;
+    background-color: blue;
+}
+
+.header{
+    display:flex;
+    justify-content: space-between;
+    height:36px;
+    align-items: center;
+}
+
+.menuFlex {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 6px;
+}
+
+.menuFlex > button {
+    color: darkred;
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 4px;
+    text-align: center;
+    line-height: 22px;
+    font-size: 16px;
+}
+
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.footer {
+    justify-content: space-around;
+    display:flex;
+    align-items: center;
+    height: 100px;
+}
+
+.footerAbout {
+    width: 200px;
+}
+
+.flex-box {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
