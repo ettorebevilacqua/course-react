@@ -237,9 +237,7 @@ Qui usiamo **dev** e **build**, rispettivamente, dev non crea il bundle ma fa pa
 
 **"dependencies"** qui vengono elencate le dipendenze nel nostro caso i files di react che abbiamo incluso con `npm install`
 
-**"devDependencies"** dentro a questa chiave troviamo "parcel": "^2.10.3", parcel è stato quindi distinto rispetto a react, infatti abbiamo aggiunto parcel con il comando :
-
-`npm install parcel -D`
+**"devDependencies"** dentro a questa chiave troviamo "parcel": "^2.10.3", parcel è stato quindi distinto rispetto a react,
 
 abbiamo aggiunto un -D finale che indica di inserire le dipendenze nella voce devDependencies rispetto a dependencies, senza questo comando `-D` avremo trovato parcel dentro a `dependencies` e il progetto si avvia senza problemi ugualmente.
 Quindi come mai questa distinzione ?

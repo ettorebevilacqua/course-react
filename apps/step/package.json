@@ -1,0 +1,22 @@
+{
+  "name": "@acme/step",
+  "version": "1.0.0",
+  "type": "module",
+  "source": "./src/index.html",
+  "scripts": {
+    "dev": "parcel",
+    "build": "parcel build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "parcel": "^2.10.3"
+  },
+  "dependencies": {
+    "package.json": "^2.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

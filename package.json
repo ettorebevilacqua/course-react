@@ -15,6 +15,7 @@
     "db:studio": "pnpm -F db:studio",
     "doc": "turbo run dev --filter=@acme/doc",
     "next": "pnpm dev --filter=@acme/nextjs",
+    "step": "pnpm dev --filter=@acme/step",
     "dev": "turbo dev --parallel",
     "start": "turbo start --parallel",
     "format": "turbo format --continue -- --cache --cache-location='node_modules/.cache/.prettiercache'",

@@ -39,7 +39,7 @@ import Home from "./pages/Home";
 import Prodotti from "./pages/Prodotti";
 
 const NavBar = ({ onChangePage, col }) => {
-    const handleChangePage = () => (page) => onChangePage(page);
+       const handleChangePage =  (page) => () => onChangePage?.(page);
 
     return (
         <div className={`menuFlex ${col ? "flex-col" : "flex-row"}`}>
@@ -105,7 +105,6 @@ ho poi dovuto inserire `onChangePage={handleChangePage}` sia su `Header` che su 
  A noi interessa far arrivare questo evento a Page diversamente posso al massimo leggerolo dentro a `Header` o `SideBar`, non ci resta che scrivere dentro a questi due compoenti :
 
 
-
 ```js
 
 const Header = ({ title, Menu, onChangePage }) => (
@@ -120,7 +119,7 @@ const SideBar = ({ onBarMove, label, onChangePage }) => {
 
     return (
         <div key="MENULEFT" className="sideBar">
-            <button onClick={handleBarMove} className="btNavBarPos secondBg">
+            <button onClick={handleBarMove} className="btNavBarPos">
                 {label}
             </button>
             <NavBar col onChangePage={onChangePage} />
@@ -130,13 +129,74 @@ const SideBar = ({ onBarMove, label, onChangePage }) => {
 
 ```
 
-Nei fatti questi due componenti non usano OnChangePage, lo  passiamo solo per essere passato al figlio `<NavBar >`, non ho modo di dire a `NavBar` di passare l'evento direttamente a Page, quindi chi usa `NavBar` deve fare da byPass. un problema che potremo avere. è se il componente si trova annidato dentro ad altri, a catena devo passare a tutti questa proprietà che potrebbe essere antipatico, ma eiste il modo per evitarlo che andremo a vedere.
+Nei fatti questi due componenti non usano OnChangePage, lo  passiamo solo per essere passato al figlio `<NavBar >`, non ho modo di dire a `NavBar` di passare l'evento direttamente a Page, quindi chi usa `NavBar` deve passare le proprietà. Il componente si potrebbe trovare annidato come figlio del figlio ecc, a catena devo passare a tutti queste proprietà, un componente padre di molti figli e sottofigli in questo modo potrebbe dover passare molte proprietà per figli diversi con il loro sotto figli. Con l uso di stati globali si può evitare il dover ripetere proprietà da prendere e passare ai componenti, dove allunga molto il lavoro.
 
-Deve essere tutto apposto, salvo che non funziona ! Se faccio click sui menu mi esce una pagina non trovata, e se guardate l 'indirezzo nella barra degli indirizzi del browser, vedete che è cambiato da  `http://localhost:3000/step/6` a `http://localhost:3000/step/prodotti`
+### il menu non funziona
 
-Il problema si trova dentro a NavBar e i suoi link del tag `<a>`, essendo un link non sente il nostro click ma che deve cambiare indirizzo, in pratica legge `href` e si comporta giustamente da link, per risolvere o cambiamo il tag `<a>` con un bottone, oppure se voglio continuare ad 
+Quello che abbiamo visto NON FUNZIONA ! Se faccio click sul menu mi esce una pagina non trovata, in particolare se guardo l 'indirizzo nella barra degli indirizzi del browser, vedete che è cambiato da  `http://localhost:3000/step/6` a `http://localhost:3000/step/prodotti`, io non volevo (per ora), cambiare url alla pagina.
+
+Il problema si trova dentro a NavBar e i suoi link del tag `<a>`, essendo un link non sente il nostro click ma che deve cambiare indirizzo, in pratica legge `href` e si comporta giustamente da link, per risolvere cambiamo il tag `<a>` con un bottone.
+
+quindi NavBar diventa :
 
 ```js
+ const NavBar = ({ onChangePage, col }) => {
+    const handleChangePage =  (page) => () => onChangePage?.(page);
 
-
+    return (
+        <div className={`menuFlex ${col ? "flex-col" : "flex-row"}`}>
+            <button href="#" onClick={handleChangePage(Home)}>
+                Home
+            </button>
+            <button href="#" onClick={handleChangePage(Prodotti)}>
+                Prodotti
+            </button>
+            <button href="#" onClick={handleChangePage(Contatti)}>
+                Contatti
+            </button>
+        </div>
+    );
+};
 ```
+
+Attenzione a  `const handleChangePage =  (page) => () =>  onChangePage?.(page);`
+
+`(page) => () =>` ricordo serve per prendere il primo parametro page, e avere la funzione per l' evento on click di buttom passata come :  `onClick={handleChangePage(Home)}>` handleChangePage quindi prende il primo parametro e restiruisce una funzione senza parametri, dove l evento passa l' oggetto event che non leggiamo, quindi posso evitare di scrivere `onClick={()=>handleChangePage(Home)}>` se non avessi utilizzato `(page) => () =>` ma direttamente `(page) => onChangePage`.
+
+Attenzione a  `onChangePage?.(page);` con il punto interrogativo indico che se non esiste onChangePage, non deve chiamare la funzione, precendentemente abbiamo utilizzato   `onChangePage && onChangePage?.(page);` che dice che se esiste `onChangePage` allora esegui quello che si trova dopo &&, ma si consiglia l' uso con il `?`.
+
+nel css dobbiamo fare un cambiamento perchè ora i bottoni appaiono pessimi graficamente
+modifichimo il file style.css dove definiamo la classe `.menuFlex > a`
+
+```css
+
+.menuFlex > a {
+    color: darkred;
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 4px;
+    text-align: center;
+    line-height: 22px;
+    font-size: 18px;
+}
+```
+
+sostituendo  `.menuFlex > a` con `.menuFlex > button`
+
+```css
+.menuFlex > button {
+    color: darkred;
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 4px;
+    text-align: center;
+    line-height: 22px;
+    font-size: 18px;
+}
+````
+
+In questo modo diciamo che anzichè applicare la proprietà al tag a ora al tag button, e ripristiano la situazione.
+
+
+
+

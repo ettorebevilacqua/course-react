@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "clean": "rm -rf .turbo node_modules",
-    "build": "pnpm with-env next build",
-    "dev": "pnpm with-env next dev",
+    "build1": "pnpm with-env next build",
+    "dev1": "pnpm with-env next dev",
     "lint": "dotenv -v SKIP_ENV_VALIDATION=1 next lint",
     "start": "pnpm with-env next start",
     "with-env": "dotenv -e ../../.env --"

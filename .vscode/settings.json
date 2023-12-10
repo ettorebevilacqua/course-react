@@ -6,7 +6,8 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
-    "**/node_modules": true
+    "**/node_modules": false
   },
-  "javascript.validate.enable": false // => required
+  "javascript.validate.enable": false,
+  "yaml.maxItemsComputed": 10000 // => required
 }
