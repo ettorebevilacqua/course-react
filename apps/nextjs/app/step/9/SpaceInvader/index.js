@@ -12,6 +12,7 @@ import { gameLoop } from "./game-loop";
 import { useHeroStore } from "./hero-reducer";
 import { update } from "./actions"
 import { Stage } from "./stage"
+import "./main.css"
 
 gameLoop(elapsedTime => {
     // console.log('loop', elapsedTime)

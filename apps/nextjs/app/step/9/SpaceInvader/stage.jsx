@@ -13,7 +13,7 @@ export const Stage = ({ state, onKeyDown, onKeyUp }) => {
         tabIndex="0"
         onKeyDown={onKeyDown}
         onKeyUp={onKeyUp}
-        style={{ width: worldWidth, height: worldHeight }}>
+        style={{ width: worldWidth, height: worldHeight,  border: "2px solid red" }}>
 
         {enemiesGrid.enemies.map(d => <Enemy
             key={d.key}
